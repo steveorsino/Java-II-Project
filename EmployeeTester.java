@@ -23,15 +23,15 @@ public class EmployeeTester {
 		double wkHrs = 0.0, hRate = 0.0, yrSal = 0.0;
 		
 		//test constructors and toString methods
-		System.out.println("\tDisplaying Employee default constructor:");
+		System.out.println("\tDisplaying PartTimeEmployee default constructor:");
 		System.out.println(myPtEmployee);
-		System.out.println("\n\tDisplaying Employee parameter constructor: ");
+		System.out.println("\n\tDisplaying PartTimeEmployee parameter constructor: ");
 		System.out.println(myPtEmployee2);
 		
 		//test constructors and toString methods
-		System.out.println("\tDisplaying Employee default constructor:");
+		System.out.println("\tDisplaying FullTimeEmployee default constructor:");
 		System.out.println(myFtEmployee);
-		System.out.println("\n\tDisplaying Employee parameter constructor: ");
+		System.out.println("\n\tDisplaying FullTimeEmployee parameter constructor: ");
 		System.out.println(myFtEmployee2);
 		
 		//create another instance of PartTimeEmployee for accessors and mutators
@@ -67,16 +67,22 @@ public class EmployeeTester {
 		myPtEmployee3.setDeptCode(depCode);
 		System.out.println("You entered: " + myPtEmployee3.getDeptCode());
 		
-		System.out.print("Please Enter the weekly hours worked of the new PartTimeEmployee: ");
-		wkHrs = input.nextDouble();
-		input.nextLine();
-		myPtEmployee3.setWeeklyHoursWorked(wkHrs);
+		
+		do {
+			System.out.print("Please Enter the weekly hours worked of the new PartTimeEmployee: ");
+			wkHrs = input.nextDouble();
+			input.nextLine();
+			myPtEmployee3.setWeeklyHoursWorked(wkHrs);
+		} while (!(myPtEmployee3.setWeeklyHoursWorked(wkHrs)));
 		System.out.println("You entered: " + myPtEmployee3.getWeeklyHoursWorked());
 		
-		System.out.print("Please Enter the hourly pay rate of the new PartTimeEmployee: ");
-		hRate = input.nextDouble();
-		input.nextLine();
-		myPtEmployee3.setHourlyRate(hRate);
+		do {
+			System.out.print("Please Enter the hourly pay rate of the new PartTimeEmployee: ");
+			hRate = input.nextDouble();
+			input.nextLine();
+			myPtEmployee3.setHourlyRate(hRate);
+		} while (!(myPtEmployee3.setHourlyRate(hRate)));
+		
 		System.out.println("You entered: " + myPtEmployee3.getHourlyRate());
 		
 		System.out.println("Your PartTimeEmployee makes $" + myPtEmployee3.calculateWeeklyPay() + " Per Week");
@@ -119,9 +125,11 @@ public class EmployeeTester {
 		myFtEmployee3.setDeptCode(depCode);
 		System.out.println("You entered: " + myFtEmployee3.getDeptCode());
 		
+		do {
 		System.out.print("Please Enter the annual salary of the new FullTimeEmployee: ");
 		yrSal = input.nextDouble();
 		myFtEmployee3.setAnnualSalary(yrSal);
+		} while (!(myFtEmployee3.setAnnualSalary(yrSal)));
 		System.out.println("You entered: " + myFtEmployee3.getAnnualSalary());
 		
 		System.out.println("Your FullTimeEmployee makes $" + myFtEmployee3.calculateWeeklyPay() + " Per Week");

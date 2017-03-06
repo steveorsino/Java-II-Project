@@ -20,8 +20,12 @@ private double annualSalary;
 	}
 	
 	//mutators
-	public void setAnnualSalary(double salary) {
-		annualSalary = salary;
+	public boolean setAnnualSalary(double salary) {
+		if (salary > 0.0)
+			annualSalary = salary;
+		else 
+			System.out.println("The value must be grater than 0");
+		return (salary > 0.0);
 	}
 	
 	

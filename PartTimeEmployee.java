@@ -22,11 +22,19 @@ public class PartTimeEmployee extends Employee {
 	}
 	
 	//mutators
-	public void setWeeklyHoursWorked(double weekhrs) {
-		weeklyHoursWorked = weekhrs;
+	public boolean setWeeklyHoursWorked(double weekhrs) {
+		if (weekhrs > 0.0)
+			weeklyHoursWorked = weekhrs;
+		else 
+			System.out.println("The value must be grater than 0");
+		return (weekhrs > 0.0);
 	}
-	public void setHourlyRate(double hrate) {
-		hourlyRate = hrate;
+	public boolean setHourlyRate(double hrate) {
+		if (hrate > 0.0)
+			hourlyRate = hrate;
+		else 
+			System.out.println("The value must be grater than 0");
+		return (hrate > 0.0);
 	}
 	
 	//accessors
