@@ -69,8 +69,43 @@ public class Employee {
 		Last_Name = lname;
 		this.ID_Num = CreateIdNumber();
 	}
-	public void setSocial(String social) {
+	public boolean setSocial(String social) {
+		boolean flag = false;
+		if (social.length() == 10) {
+			for (int i = 0; i < 3; i++) {
+				if (!Character.isDigit(social.charAt(i))) {
+					System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+					return flag;
+				}
+			}
+			if (social.charAt(3) != '-') {
+				System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+				return flag;
+			}
+			if (!Character.isDigit(social.charAt(4))) {
+				System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+				return flag;
+			}
+			if (!Character.isDigit(social.charAt(5))) {
+				System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+				return flag;
+			}
+			if (social.charAt(6) != '-') {
+				System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+				return flag;
+			}
+			for (int i = 7; i < 11; i++) {
+				if (!Character.isDigit(social.charAt(i))) {
+					System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
+					return flag;
+				}
+			}
+			flag = true;
+		} else {
+			return flag;
+		}
 		Social = social;
+		return flag;
 	}
 	public void setSYear(String syear) {
 		Start_Year = syear;

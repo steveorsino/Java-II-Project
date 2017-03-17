@@ -47,9 +47,11 @@ public class EmployeeTester {
 		myPtEmployee3.setLName(lName);
 		System.out.println("You entered: " + myPtEmployee3.getLName());
 		
-		System.out.print("Please Enter the SSN name of the new PartTimeEmployee: ");
-		soc = input.nextLine();
-		myPtEmployee3.setSocial(soc);
+		
+		do {
+			System.out.print("Please Enter the SSN name of the new PartTimeEmployee: ");
+			soc = input.nextLine();
+		} while(!myPtEmployee3.setSocial(soc));
 		System.out.println("You entered: " + myPtEmployee3.getSocial());
 		
 		System.out.print("Please Enter the start year of the new PartTimeEmployee: ");
@@ -72,7 +74,7 @@ public class EmployeeTester {
 			System.out.print("Please Enter the weekly hours worked of the new PartTimeEmployee: ");
 			wkHrs = input.nextDouble();
 			input.nextLine();
-			myPtEmployee3.setWeeklyHoursWorked(wkHrs);
+			//myPtEmployee3.setWeeklyHoursWorked(wkHrs);
 		} while (!(myPtEmployee3.setWeeklyHoursWorked(wkHrs)));
 		System.out.println("You entered: " + myPtEmployee3.getWeeklyHoursWorked());
 		
@@ -80,7 +82,7 @@ public class EmployeeTester {
 			System.out.print("Please Enter the hourly pay rate of the new PartTimeEmployee: ");
 			hRate = input.nextDouble();
 			input.nextLine();
-			myPtEmployee3.setHourlyRate(hRate);
+			//myPtEmployee3.setHourlyRate(hRate);
 		} while (!(myPtEmployee3.setHourlyRate(hRate)));
 		
 		System.out.println("You entered: " + myPtEmployee3.getHourlyRate());
@@ -105,9 +107,11 @@ public class EmployeeTester {
 		myFtEmployee3.setLName(lName);
 		System.out.println("You entered: " + myFtEmployee3.getLName());
 		
-		System.out.print("Please Enter the SSN name of the new FullTimeEmployee: ");
-		soc = input.nextLine();
-		myFtEmployee3.setSocial(soc);
+		do {
+			System.out.print("Please Enter the SSN of the new FullTimeEmployee: ");
+			soc = input.nextLine();
+		} while(!myFtEmployee3.setSocial(soc));
+		
 		System.out.println("You entered: " + myFtEmployee3.getSocial());
 		
 		System.out.print("Please Enter the start year of the new FullTimeEmployee: ");
@@ -128,7 +132,7 @@ public class EmployeeTester {
 		do {
 		System.out.print("Please Enter the annual salary of the new FullTimeEmployee: ");
 		yrSal = input.nextDouble();
-		myFtEmployee3.setAnnualSalary(yrSal);
+		//myFtEmployee3.setAnnualSalary(yrSal);
 		} while (!(myFtEmployee3.setAnnualSalary(yrSal)));
 		System.out.println("You entered: " + myFtEmployee3.getAnnualSalary());
 		
