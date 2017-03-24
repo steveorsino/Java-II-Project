@@ -2,6 +2,7 @@
 //Kyle Hunter
 //Programming II Version 1
 //2/1/17
+import java.util.Date;
 public class Employee {
 	//Declare attributes
 	private	String First_Name, Last_Name, ID_Num, Social, Start_Year, Dept, Dept_Code;
@@ -71,7 +72,7 @@ public class Employee {
 	}
 	public boolean setSocial(String social) {
 		boolean flag = false;
-		if (social.length() == 10) {
+		if (social.length() == 11) {
 			for (int i = 0; i < 3; i++) {
 				if (!Character.isDigit(social.charAt(i))) {
 					System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
@@ -102,13 +103,23 @@ public class Employee {
 			}
 			flag = true;
 		} else {
+			System.out.println("The SSN must be in the form 'xxx-xx-xxxx'");
 			return flag;
 		}
 		Social = social;
 		return flag;
 	}
-	public void setSYear(String syear) {
+	public boolean setSYear(String syear) {
+		Date now = new Date();
+		boolean flag = false;
+		int tempyear = Integer.parseInt(syear);
+		if (tempyear > (1900 + now.getYear())) {
+			System.out.println("The start year must not be in the future");
+			return flag;
+		}
+		flag = true;
 		Start_Year = syear;
+		return flag;
 	}
 	public void setDept(String dept) {
 		Dept = dept;

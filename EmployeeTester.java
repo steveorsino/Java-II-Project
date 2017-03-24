@@ -54,9 +54,10 @@ public class EmployeeTester {
 		} while(!myPtEmployee3.setSocial(soc));
 		System.out.println("You entered: " + myPtEmployee3.getSocial());
 		
-		System.out.print("Please Enter the start year of the new PartTimeEmployee: ");
-		sYear = input.nextLine();
-		myPtEmployee3.setSYear(sYear);
+		do {
+			System.out.print("Please Enter the start year of the new PartTimeEmployee: ");
+			sYear = input.nextLine();
+		} while (!myPtEmployee3.setSYear(sYear));
 		System.out.println("You entered: " + myPtEmployee3.getSYear());
 		
 		System.out.print("Please Enter the department of the new PartTimeEmployee: ");
@@ -114,9 +115,10 @@ public class EmployeeTester {
 		
 		System.out.println("You entered: " + myFtEmployee3.getSocial());
 		
-		System.out.print("Please Enter the start year of the new FullTimeEmployee: ");
-		sYear = input.nextLine();
-		myFtEmployee3.setSYear(sYear);
+		do {
+			System.out.print("Please Enter the start year of the new FullTimeEmployee: ");
+			sYear = input.nextLine();
+		} while(!myFtEmployee3.setSYear(sYear));
 		System.out.println("You entered: " + myFtEmployee3.getSYear());
 		
 		System.out.print("Please Enter the department of the new FullTimeEmployee: ");
